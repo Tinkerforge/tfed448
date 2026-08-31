@@ -1,0 +1,15 @@
+set(CMAKE_SYSTEM_NAME Generic)
+set(CMAKE_SYSTEM_PROCESSOR xtensa)
+set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+
+if(NOT DEFINED ENV{PLATFORMIO_CORE_DIR})
+    set(PLATFORMIO_CORE_DIR "$ENV{HOME}/.platformio")
+else()
+    set(PLATFORMIO_CORE_DIR "$ENV{PLATFORMIO_CORE_DIR}")
+endif()
+
+set(TOOLCHAIN_BIN "${PLATFORMIO_CORE_DIR}/packages/toolchain-xtensa-esp-elf/bin")
+set(CMAKE_C_COMPILER "${TOOLCHAIN_BIN}/xtensa-esp32-elf-gcc")
+set(CMAKE_AR "${TOOLCHAIN_BIN}/xtensa-esp32-elf-ar")
+set(CMAKE_RANLIB "${TOOLCHAIN_BIN}/xtensa-esp32-elf-ranlib")
+set(CMAKE_SIZE "${TOOLCHAIN_BIN}/xtensa-esp32-elf-size")

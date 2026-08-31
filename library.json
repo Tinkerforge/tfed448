@@ -1,0 +1,45 @@
+{
+    "name": "tfed448",
+    "version": "0.1.0",
+    "description": "Portable PureEd448 and SHAKE256 provider for Tinkerforge firmware",
+    "keywords": ["ed448", "shake256", "cryptography"],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Tinkerforge/tfed448"
+    },
+    "license": "LGPL-2.1-or-later AND MIT",
+    "frameworks": "*",
+    "platforms": "*",
+    "build": {
+        "includeDir": "include",
+        "srcDir": ".",
+        "srcFilter": [
+            "+<src/tf_ed448.c>",
+            "+<src/libdecaf/utils.c>",
+            "+<src/libdecaf/shake.c>",
+            "+<src/libdecaf/p448/arch_32/f_impl.c>",
+            "+<src/libdecaf/p448/f_arithmetic.c>",
+            "+<src/libdecaf/ed448goldilocks/decaf_tables.c>",
+            "+<src/libdecaf/generated/p448/f_generic.c>",
+            "+<src/libdecaf/generated/ed448goldilocks/scalar.c>",
+            "+<src/libdecaf/generated/ed448goldilocks/decaf.c>",
+            "+<src/libdecaf/generated/ed448goldilocks/eddsa.c>"
+        ],
+        "flags": [
+            "-DDECAF_WORD_BITS=32",
+            "-Isrc",
+            "-Isrc/libdecaf/include",
+            "-Isrc/libdecaf/include/arch_32",
+            "-Isrc/libdecaf/p448",
+            "-Isrc/libdecaf/p448/arch_32",
+            "-Isrc/libdecaf/generated/p448",
+            "-include src/tf_ed448_portable_endian.h",
+            "-fno-strict-aliasing",
+            "-ffunction-sections",
+            "-fdata-sections"
+        ]
+    },
+    "export": {
+        "exclude": ["build", "tests"]
+    }
+}

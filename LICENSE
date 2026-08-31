@@ -1,0 +1,15 @@
+tfed448
+Copyright (C) 2026 Olaf Lüke <olaf@tinkerforge.com>
+
+Tinkerforge-authored files in this repository are free software: you can
+redistribute them and/or modify them under the terms of the GNU Lesser General
+Public License as published by the Free Software Foundation, either version
+2.1 of the License, or (at your option) any later version.
+
+This software is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See <https://www.gnu.org/licenses/> for the complete
+license text.
+
+The imported libdecaf files are licensed separately. See
+LICENSE.libdecaf.txt and the notices retained in those files.
